@@ -1,0 +1,388 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Coda:wght@400;800&family=Federo&family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ultra&display=swap');
+
+/* Base styles and CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Federo', sans-serif;
+}
+
+:root {
+  --primary-color: #008e28;
+  --secondary-color: #85868f;
+  --success-color: #10b981;
+  --error-color: #ef4444;
+  --bg-gradient: linear-gradient(135deg, #000000 0%, #e7e7e7 100%);
+  --box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+body {
+  min-height: 100vh;
+  background: var(--bg-gradient);
+  padding: 20px;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Navigation Styles */
+.nav {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  box-shadow: var(--box-shadow);
+  animation: slideDown 0.5s ease-out;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-info svg {
+  width: 24px;
+  height: 24px;
+  color: var(--primary-color);
+  animation: pulse 2s infinite;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Container and Form Box Styles */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.box {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: var(--box-shadow);
+  margin-bottom: 2rem;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.form-box {
+  max-width: 500px;
+  margin: 2rem auto;
+}
+
+/* Form Elements */
+.field {
+  margin-bottom: 1.5rem;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.field input:focus,
+.field textarea:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+  outline: none;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #4a5568;
+}
+
+/* Buttons */
+.btn {
+  background: var(--primary-color);
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn:hover {
+  background: var(--secondary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Messages and Alerts */
+.message,
+.error {
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  animation: slideIn 0.5s ease-out;
+}
+
+.message {
+  background: #dcfce7;
+  border: 1px solid var(--success-color);
+  color: #166534;
+}
+
+.error {
+  background: #fee2e2;
+  border: 1px solid var(--error-color);
+  color: #991b1b;
+}
+
+/* Complaint Form and History */
+.complaint-form,
+.complaint-history {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--box-shadow);
+}
+
+.complaint-item {
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+  background: #f8fafc;
+}
+
+.complaint-item:hover {
+  transform: translateX(5px);
+  border-left: 4px solid var(--primary-color);
+}
+
+.complaint-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+/* Status Badges */
+.status-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.status-pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.status-processed {
+  background: #dcfce7;
+  color: #166534;
+}
+
+/* Headers */
+header,
+h2 {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Links */
+.links {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.links a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.links a:hover {
+  color: var(--secondary-color);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .complaint-header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .box,
+  .complaint-form,
+  .complaint-history {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  .field input,
+  .field textarea {
+    padding: 10px;
+  }
+
+  .complaint-item {
+    padding: 1rem;
+  }
+
+  header,
+  h2 {
+    font-size: 1.25rem;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-color: #000000;
+    --secondary-color: mmmmmm#8e90ff;
+  }
+
+  body {
+    color: #e2e8f0;
+  }
+
+  .box,
+  .complaint-form,
+  .complaint-history,
+  .nav {
+    background: rgba(30, 41, 59, 0.95);
+  }
+
+  .field input,
+  .field textarea {
+    background: #1e293b;
+    border-color: #475569;
+    color: #e2e8f0;
+  }
+
+  .complaint-item {
+    background: #334155;
+    border-color: #475569;
+  }
+
+  label {
+    color: #e2e8f0;
+  }
+}
+
+nav>image {
+
+  background-color: #ffffff;
+  padding: 15px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.image {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.image img {
+  height: 50px;
+  width: auto;
+  transition: transform 0.3s ease;
+}
+
+.image img:hover {
+  transform: scale(1.05);
+}
